@@ -1,0 +1,65 @@
+<%- include('header') -%>
+
+
+<div class="container container-scoreboard">
+    <div class="row">
+        <h2>Leaderboard</h2>
+    </div>
+    <div class="scoreboard">
+        <div class="admin-row">
+            <div class="admin-col">
+                <p> <b> Sr No </b> </p>
+            </div>
+            <div class="admin-col">
+                <p> <b> Team Name </b> </p>
+            </div>
+            <div class="admin-col">
+                <p> <b> Email </b> </p>
+            </div>
+            <div class="admin-col">
+                <p> <b> Leader Name </b> </p>
+            </div>
+            <div class="admin-col">
+                <p> <b> Points </b> </p>
+            </div>
+            <div class="admin-col">
+                <p> <b> Delete </b> </p>
+            </div>
+            <div class="admin-col">
+                <p> <b> Edit </b> </p>
+            </div>
+        </div>
+        <% for  (let i = 0; i < data.length; i++) { %>
+            <div class="admin-row">
+                <div class="admin-col">
+                    <p> <%= i+1 %> </p>
+                </div>
+                <div class="admin-col">
+                    <p> <%= data[i].teamName %> </p>
+                </div>
+                <div class="admin-col">
+                    <p> <%= data[i].email %> </p>
+                </div>
+                <div class="admin-col">
+                    <p> <%= data[i].leaderName %> </p>
+                </div>
+                <div class="admin-col">
+                    <p> <%= data[i].points %> </p>
+                </div>
+                <div class="admin-col">
+                    <form action="/admin/delete/<%=data[i]._id%>" method="post">
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
+                </div>
+                <div class="admin-col">
+                    <form action="/admin/edit/<%=data[i]._id%>" method="post">
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+
+<%- include('footer') -%>

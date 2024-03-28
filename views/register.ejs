@@ -1,0 +1,56 @@
+<%- include('header') -%>
+
+<div class="container container-register">
+  <div class="row">
+    <div class="register col-lg-3 col-sm-1 col-xs-2">
+        <img src="/images/muk.png" alt="Pokemon Image" class="img-fluid">
+    </div>
+
+    <div class="register col-lg-6 col-sm-10 col-xs-8">
+      <h2>Register for HunterXPokemon</h2>
+      <form action="/admin/register" method="post">
+        <div class="mb-3">
+          <label for="teamName" class="form-label">Team Name*</label>
+          <input type="text" class="form-control" name="teamName" id="teamName" placeholder="Enter your Team Name" required>
+        </div>
+        <div class="mb-3">
+          <label for="teamName" class="form-label">Leader Name*</label>
+          <input type="text" class="form-control" name="leaderName" id="leaderName" placeholder="Enter Leader's Name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Leader's Email*</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password*</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password*</label>
+          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" required>
+        </div>
+        <div class="mb-3">
+          <label for="teamName" class="form-label">Team Member 2*</label>
+          <input type="text" class="form-control" name="member2" id="member2" placeholder="Enter your Member's Name" required>
+        </div>
+        <% for (let i = 3; i <= 5; i++) { %>
+          <div class="mb-3">
+            <label for="teamName" class="form-label">Team Member <%= i %></label>
+            <input type="text" class="form-control" name="member<%= i %>" id="member<%= i %>" placeholder="Enter your Member's Name">
+          </div>
+        <% } %>
+        <div class="mb-3 register-message">
+            <span> <%= message %> </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+
+    <div class="register col-lg-3 col-sm-1 col-xs-2">
+        <img src="/images/snorlax.png" alt="Pokemon Image" class="img-fluid">
+    </div>
+
+  </div>
+</div>
+
+<%- include('footer') -%>

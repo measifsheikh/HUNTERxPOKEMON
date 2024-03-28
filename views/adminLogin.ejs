@@ -1,0 +1,14 @@
+<%- include('header') -%>
+
+
+<div class="container container-admin-login">
+    <h1>Admin Login Page</h1>
+    <form class="admin-form" action="/admin/login" method="post">
+        <input class="admin-input" name="username" type="text" id="username" placeholder="Username">
+        <input class="admin-input" name="password" type="password" id="password" placeholder="Password">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+
+
+<%- include('footer') -%>

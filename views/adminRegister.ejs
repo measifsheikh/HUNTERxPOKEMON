@@ -1,0 +1,17 @@
+<%- include('header') -%>
+
+
+<div class="container container-admin-login">
+    <h1>Admin Registeration Page</h1>
+    <form class="admin-form" action="/admin/register" method="post">
+        <input class="admin-input" name="username" type="text" id="username" placeholder="Email">
+        <input class="admin-input" name="password" type="password" id="password" placeholder="Password">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div class="mb-3 register-message">
+        <span> <%= message %> </span>
+    </div>
+</div>
+
+
+<%- include('footer') -%>

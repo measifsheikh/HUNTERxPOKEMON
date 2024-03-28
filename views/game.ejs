@@ -1,0 +1,15 @@
+<%- include('header') -%>
+
+<div class="container container-game">
+    <h1>HunterXPokemon</h1>
+    <form action= "<%=route%>" method="post" >
+        <img src=<%= image %> alt="">
+        <div class="submit">
+            <input type="text" placeholder="Enter your Email id" name="email">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<%- include('footer') -%>

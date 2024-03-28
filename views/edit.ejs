@@ -1,0 +1,28 @@
+<%- include('header') -%>
+
+<div class="container container-edit">
+    <div class="row">
+        <div class="team-detail col-lg-6">
+            <h3>Team Details</h3>
+            <p>Team Name: <%= data.teamName %></p>
+            <p>Leader Name: <%= data.leaderName %></p>
+            <p>Email: <%= data.email %></p>
+            <p><b>Points: <%= data.points %></b></p>
+            <p>Member 2: <%= data.member2 %></p>
+            <p>Member 3: <%= data.member3 %></p>
+            <p>Member 4: <%= data.member4 %></p>
+            <p>Member 5: <%= data.member5 %></p>
+            <p>Next : <%= data.next %>  </p>
+        </div>
+        <div class="edit-form col-lg-6">
+            <form action="/edit" method="post">
+                <h3>Edit</h3>
+                <input type="hidden" name="email" value="<%= data.email %>">
+                <input type="text" placeholder="Enter next" name="next">
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>
